@@ -13,12 +13,12 @@ public class RandomWalkers {
 
       while (distance != r)
       {
-        int random = (int) (Math.random() * 3);
+        double random = Math.random();
         
-        if (random == 0) y += 1;
-        if (random == 1) x += 1;
-        if (random == 2) y -= 1;
-        if (random == 3) x -= 1;
+        if (random < 0.25) y += 1;
+        if (random < 0.5) x += 1;
+        if (random < 0.75) y -= 1;
+        if (random < 1) x -= 1;
 
         distance = Math.abs(x) + Math.abs(y);
         steps += 1;
